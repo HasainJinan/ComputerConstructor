@@ -1,0 +1,86 @@
+@import url('https://fonts.cdnfonts.com/css/tf2-build');
+
+.container {  display: grid;
+    grid-template-columns: 1fr 0.8fr 1.2fr;
+    grid-template-rows: 0.4fr 1fr 0.6fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Computer-Constructor Computer-Constructor Navigation"
+      "Clicker Tabs Tabs"
+      "Munee Munee Munee";
+  }
+  
+  .Clicker { grid-area: Clicker; }
+  
+  .Computer-Constructor { grid-area: Computer-Constructor; }
+  
+  .Navigation { grid-area: Navigation; }
+  
+  .Tabs { grid-area: Tabs; }
+  
+  .Munee { grid-area: Munee; }
+
+  .tabContainer {  display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Image1 Upgrade1"
+      "Image2 Upgrade2"
+      "Image3 Upgrade3"
+      "Image4 Upgrade4";
+      height: 55vh;
+  }
+  
+  .Image1 { grid-area: Image1; }
+  
+  .Image2 { grid-area: Image2; }
+  
+  .Image3 { grid-area: Image3; }
+
+  .Image4 { grid-area: Image4; }
+  
+  .Upgrade1 { grid-area: Upgrade1; }
+  
+  .Upgrade2 { grid-area: Upgrade2; }
+  
+  .Upgrade3 { grid-area: Upgrade3; }
+
+  .Upgrade4 { grid-area: Upgrade4; }
+  
+
+  .title {
+    font-size: 40px;
+    font-family: tf2 build;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .nav {
+    font-size: 35px;
+    font-family: tf2 build;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .clickerpane {
+    height: 30px;
+  }
+
+  .profit {
+    font-size: 35px;
+    font-family: tf2 build;
+    padding-top: 20px;
+  }
+
+  .upgradeSubtab {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .textStyle {
+    font-family: tf2 build;
+  }
+  

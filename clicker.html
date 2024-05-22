@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="clicker.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="Clicker clickerpane"><button class="textStyle" onclick="addMoney()">Image goes here.</button></div>
+        <div class="Computer-Constructor title">Computer Constructor</div>
+        <div class="Navigation nav">Upgrades</div>
+        <div class="Tabs"><div class="tabContainer">
+            <div class="Image1 upgradeSubtab textStyle">Image1</div>
+            <div class="Image2 upgradeSubtab textStyle">Image2</div>
+            <div class="Image3 upgradeSubtab textStyle">Image3</div>
+            <div class="Upgrade1 upgradeSubtab textStyle">
+                <button class="textStyle" onclick="buyWires()">Wires<br>Cost: 100$</button><div id="wiresOwned">Amount Owned:</div>
+            </div>
+            <div class="Upgrade2 upgradeSubtab textStyle">
+                <button class="textStyle" onclick="buyRAM()">RAM<br>Cost: 700$</button><div id="ramOwned">Amount Owned:</div>
+            </div>
+            <div class="Upgrade3 upgradeSubtab textStyle">
+                <button class="textStyle" onclick="buyGPU()">GPU<br>Cost: 5000$</button><div id="gpuOwned">Amount Owned:</div>
+            </div>
+            <div class="Upgrade4 upgradeSubtab textStyle">
+                
+            </div>
+        </div></div>
+        <div class="Munee profit" id="profits"></div>
+    </div>
+
+    <script src="clicker.js"></script>
+</body>
+</html>
