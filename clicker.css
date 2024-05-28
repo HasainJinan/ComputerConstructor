@@ -1,5 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/tf2-build');
 
+
+.bg {
+  background-color: lightgrey;
+}
+
 .container {  display: grid;
     grid-template-columns: 1fr 0.8fr 1.2fr;
     grid-template-rows: 0.4fr 1fr 0.6fr;
@@ -11,13 +16,19 @@
       "Munee Munee Munee";
   }
   
-  .Clicker { grid-area: Clicker; }
+  .Clicker { grid-area: Clicker; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   .Computer-Constructor { grid-area: Computer-Constructor; }
   
   .Navigation { grid-area: Navigation; }
   
-  .Tabs { grid-area: Tabs; }
+  .Tabs { grid-area: Tabs; 
+    overflow: scroll;
+  }
   
   .Munee { grid-area: Munee; }
 
@@ -52,26 +63,40 @@
   
 
   .title {
-    font-size: 40px;
+    font-size: 50px;
     font-family: tf2 build;
+    color: lightblue;
+    background-color: rgb(8, 77, 42);
     padding-top: 20px;
     padding-bottom: 20px;
+    padding-left: 20px;
+    border: solid white;
+    display: flex;
+    align-items: center;
   }
 
   .nav {
     font-size: 35px;
     font-family: tf2 build;
+    color: lightblue;
+    background-color: rgb(8, 77, 42);
     padding-top: 20px;
     padding-bottom: 20px;
+    border: solid white;
+    display: flex;
+    align-items: center;
+    padding-left: 140px;
   }
 
   .clickerpane {
-    height: 30px;
+    height: 410px;
+    border: solid white;
   }
 
   .profit {
     font-size: 35px;
     font-family: tf2 build;
+    color: lightblue;
     padding-top: 20px;
   }
 
@@ -82,5 +107,46 @@
 
   .textStyle {
     font-family: tf2 build;
+    color: lightblue;
   }
   
+  .clickerButton {
+    padding-top: 0vh;
+    padding-bottom: 0vh;
+    padding-left: 0vw;
+    padding-right: 0vw;
+    margin-left: 15px;
+    margin-right: 50px;
+    margin-top: 15px;
+    background-color: white;
+    border: solid white;
+    border-radius: 3px;
+  }
+  
+  .upgradeButton {
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    background-color: white;
+    border: solid white;
+    border-radius: 3px;
+  }
+
+  .clickerImage {
+    height: 290px;
+  }
+
+  .clickerImage:active {
+    height: 220px;
+  }
+
+  .upgradeImage {
+    height: 103px;
+    margin-left: 220px;
+  }
+
+  .back {
+    background-color: rgb(8, 77, 42);
+    border: solid white;
+  }

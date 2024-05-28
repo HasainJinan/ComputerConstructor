@@ -10,22 +10,27 @@ ram.innerText = "Amount Owned: 0"
 let gpuCounter = 0
 let gpu = document.getElementById("gpuOwned")
 gpu.innerText = "Amount Owned: 0"
+let hdCounter = 0
+let hd = document.getElementById("hdOwned")
+hd.innerText = "Amount Owned: 0"
 
 function addMoney () {
-    counter = counter + 400
+    counter = counter + 2 + wireCounter
 
     profits.innerText = "Money: $" + counter
 }
 
 function buyWires() {
-    if (counter >= 100) {
-        counter = counter - 100
+    if (counter >= 150) {
+        let wirePrice = 150
+        wirePrice = wirePrice + wirePrice * 0.05
+        counter = counter - 150
         profits.innerText = "Money: $" + counter
         wireCounter = wireCounter + 1
         wires.innerText = "Amount Owned: " + wireCounter
     }
     else {
-        let moneyWireLeft = 100 - counter
+        let moneyWireLeft = 150 - counter
         alert("Not enough money. You need $" + moneyWireLeft + " more to buy this item.")
     }
 }
@@ -55,3 +60,24 @@ function buyGPU() {
         alert("Not enough money. You need $" + moneyGPULeft + " more to buy this item.")
     }
 }
+
+function buyHD() {
+    if (counter >= 15000) {
+        counter = counter - 15000
+        profits.innerText = "Money: $" + counter
+        hdCounter = hdCounter + 1
+        hd.innerText = "Amount Owned: " + hdCounter
+    }
+    else {
+        let moneyHDLeft = 15000 - counter
+        alert("Not enough money. You need $" + moneyHDLeft + " more to buy this item.")
+    }
+}
+
+function gameLoop() {
+    //Wire Counter is used to increase click power.//
+    counter = counter + (10 * ramCounter) + (50 * gpuCounter) + (600 * hdCounter)
+    profits.innerText = "Money: $" + counter
+}
+
+setInterval(gameLoop, 1000)
