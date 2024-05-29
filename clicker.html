@@ -19,16 +19,16 @@
             <div class="Image3 upgradeSubtab textStyle">Image3</div>
             <div class="Image4 upgradeSubtab textStyle">Image4</div>
             <div class="Upgrade1 upgradeSubtab textStyle">
-                <button class="textStyle upgradeButton" onclick="buyWires()">Wires<br>Cost: 150$<br><div id="wiresOwned">Amount Owned:</div></button>
+                <button class="textStyle upgradeButton" id="wireButton" onclick="buyWires()">Wires<br><span id="wireCost">Cost: $150</span><br><div id="wiresOwned">Amount Owned:</div></button>
             </div>
             <div class="Upgrade2 upgradeSubtab textStyle">
-                <button class="textStyle upgradeButton" onclick="buyRAM()">RAM<br>Cost: 700$<br><div id="ramOwned">Amount Owned:</div></button>
+                <button class="textStyle upgradeButton" id="ramButton" onclick="buyRAM()">RAM<br><span id="ramCost">Cost: $700</span><br><div id="ramOwned">Amount Owned:</div></button>
             </div>
             <div class="Upgrade3 upgradeSubtab textStyle">
-                <button class="textStyle upgradeButton" onclick="buyGPU()">GPU<br>Cost: 5000$<br><div id="gpuOwned">Amount Owned:</div></button>
+                <button class="textStyle upgradeButton" id="gpuButton" onclick="buyGPU()">GPU<br><span id="gpuCost">Cost: $5000</span><br><div id="gpuOwned">Amount Owned:</div></button>
             </div>
             <div class="Upgrade4 upgradeSubtab textStyle">
-                <button class="textStyle upgradeButton" onclick="buyHD()">Hard Drive<br>Cost: 15000$<br><div id="hdOwned">Amount Owned:</div></button>
+                <button class="textStyle upgradeButton" id="hdButton" onclick="buyHD()">Hard Drive<br><span id="hdCost">Cost: $15000</span><br><div id="hdOwned">Amount Owned:</div></button>
             </div>
         </div></div>
         <div class="Munee profit back" id="profits"></div>
