@@ -1,3 +1,7 @@
+//  .clickerImage:active {
+//    height: 220px;
+//  }
+
 //Variables//
 let counter = 0
 let profits = document.getElementById("profits")
@@ -23,32 +27,31 @@ let hd = document.getElementById("hdOwned")
 let hdCost = document.getElementById("hdCost")
 hd.innerText = "Amount Owned: 0"
 
-let wireButton = document.getElementById("wireButton")
+const clickerImage = document.getElementById("clickerImage")
+clickerImage.className = "clickerImage"
 //Variables//
 
 
 //Money on Click.//
 function addMoney () {
-    counter = counter + 20 + wireCounter
+    clickerImage.classList.add("clickerImageMove")
+    
+    counter = counter + 2 + wireCounter
 
     profits.innerText = "Money: $" + counter
 }
 
 //Buying Wires.//
 function buyWires() {
-    let wirePrice = 150 + wireCounter ** 2
+    let wirePrice = 150 + wireCounter ** 3
     wireCost.innerText = "Cost: $" + wirePrice.toFixed(0)
     if (counter >= wirePrice.toFixed(0)) {
         counter = counter - wirePrice.toFixed(0)
         profits.innerText = "Money: $" + counter
         wireCounter = wireCounter + 1
         wires.innerText = "Amount Owned: " + wireCounter
-        wirePrice = 150 + wireCounter ** 2
+        wirePrice = 150 + wireCounter ** 3
         wireCost.innerText = "Cost: $" + wirePrice.toFixed(0)
-    }
-    else {
-        let moneyWireLeft = wirePrice.toFixed(0) - counter
-        alert("Not enough money. You need $" + moneyWireLeft + " more to buy this item.")
     }
 }
 
@@ -72,14 +75,14 @@ function buyRAM() {
 
 //Buying GPUs.//
 function buyGPU() {
-    let gpuPrice = 5000 + gpuCounter ** 2
+    let gpuPrice = 5000 + gpuCounter ** 4
     gpuCost.innerText = "Cost: $" + gpuPrice.toFixed(0)
     if (counter >= gpuPrice.toFixed(0)) {
         counter = counter - gpuPrice.toFixed(0)
         profits.innerText = "Money: $" + counter
         gpuCounter = gpuCounter + 1
         gpu.innerText = "Amount Owned: " + gpuCounter
-        gpuPrice = 5000 + gpuCounter ** 2
+        gpuPrice = 5000 + gpuCounter ** 4
         gpuCost.innerText = "Cost: $" + gpuPrice.toFixed(0)
     }
     else {
@@ -90,14 +93,14 @@ function buyGPU() {
 
 //Buying Hard Drives.//
 function buyHD() {
-    let hdPrice = 15000 + hdCounter ** 2
+    let hdPrice = 15000 + hdCounter ** 4
     hdCost.innerText = "Cost: $" + hdPrice.toFixed(0)
     if (counter >= hdPrice.toFixed(0)) {
         counter = counter - hdPrice.toFixed(0)
         profits.innerText = "Money: $" + counter
         hdCounter = hdCounter + 1
         hd.innerText = "Amount Owned: " + hdCounter
-        hdPrice = 15000 + hdCounter ** 2
+        hdPrice = 15000 + hdCounter ** 4
         hdCost.innerText = "Cost: $" + hdPrice.toFixed(0)
     }
     else {
@@ -113,12 +116,29 @@ function gameLoop() {
 }
 
 function checkPrice() {
-    if (counter.toFixed(0) >= wirePrice.toFixed(0)) {
-        wireButton.disabled = true
-
+    if (counter.toFixed(0) >= 150 + wireCounter ** 3) {
+        wireButton.disabled = false
     }
     else {
-        wireButton.disabled = false
+        wireButton.disabled = true
+    }
+    if (counter.toFixed(0) >= 700 + ramCounter ** 3) {
+        ramButton.disabled = false
+    }
+    else {
+        ramButton.disabled = true
+    }
+    if (counter.toFixed(0) >= 5000 + gpuCounter ** 4) {
+        gpuButton.disabled = false
+    }
+    else {
+        gpuButton.disabled = true
+    }
+    if (counter.toFixed(0) >= 15000 + hdCounter ** 4) {
+        hdButton.disabled = false
+    }
+    else {
+        hdButton.disabled = true
     }
 }
 

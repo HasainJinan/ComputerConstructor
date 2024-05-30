@@ -133,13 +133,7 @@
     border-radius: 3px;
   }
 
-  .clickerImage {
-    height: 290px;
-  }
 
-  .clickerImage:active {
-    height: 220px;
-  }
 
   .upgradeImage {
     height: 103px;
@@ -150,3 +144,25 @@
     background-color: rgb(8, 77, 42);
     border: solid white;
   }
+
+  button:disabled {
+    color: red;
+    background-color: lightgray;
+  }
+
+.clickerImage{
+  height: 290px;
+}
+
+.clickerImageMove {
+    height: 290px;
+    animation-name: clickerImageMove;
+    animation-duration: 0.3s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
+@keyframes clickerImageMove {
+    0% {height: 290px;}
+    50% {height: 220px;}
+}
