@@ -30,7 +30,8 @@
     overflow: scroll;
   }
   
-  .Munee { grid-area: Munee; }
+  .Munee { grid-area: Munee; 
+  }
 
   .tabContainer {  display: grid;
     grid-template-columns: 0.5fr 1fr;
@@ -98,6 +99,7 @@
     font-family: tf2 build;
     color: lightblue;
     padding-top: 20px;
+    padding-bottom: 50px;
   }
 
   .upgradeSubtab {
@@ -121,6 +123,7 @@
     background-color: white;
     border: solid white;
     border-radius: 3px;
+    transition: transform 0.2s ease;
   }
   
   .upgradeButton {
@@ -131,9 +134,9 @@
     background-color: white;
     border: solid white;
     border-radius: 3px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
   }
-
-
 
   .upgradeImage {
     height: 103px;
@@ -148,21 +151,33 @@
   button:disabled {
     color: red;
     background-color: lightgray;
+    pointer-events: none;
   }
 
 .clickerImage{
   height: 290px;
+  cursor: pointer;
 }
 
-.clickerImageMove {
-    height: 290px;
-    animation-name: clickerImageMove;
-    animation-duration: 0.3s;
-    animation-direction: alternate;
-    animation-iteration-count: 1;
+.clickerButton:active {
+  transform: scale(0.72);
 }
 
-@keyframes clickerImageMove {
-    0% {height: 290px;}
-    50% {height: 220px;}
+.upgradeButton:active {
+  transform: scale(0.86);
+}
+
+.muteMusic {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 20px;
+}
+.playMusic {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 20px;
+}
+
+#profits {
+  margin-left: 20px;
 }

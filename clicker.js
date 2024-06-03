@@ -1,7 +1,3 @@
-//  .clickerImage:active {
-//    height: 220px;
-//  }
-
 //Variables//
 let counter = 0
 let profits = document.getElementById("profits")
@@ -27,15 +23,37 @@ let hd = document.getElementById("hdOwned")
 let hdCost = document.getElementById("hdCost")
 hd.innerText = "Amount Owned: 0"
 
-const clickerImage = document.getElementById("clickerImage")
-clickerImage.className = "clickerImage"
+let bgMusic = new Howl({
+    src: ["bgMusic.mp3"],
+    autoplay: true,
+    volume: 0.05,
+    loop: true
+})
+
+let click = new Howl({
+    src: ["click.wav"],
+    volume: 0.15
+})
+
+let upgrade = new Howl({
+    src: ["upgrade.wav"],
+    volume: 0.05
+})
 //Variables//
 
 
+function muteMusic () {
+    bgMusic.pause()
+}
+
+function playMusic () {
+    bgMusic.play()
+}
+
 //Money on Click.//
-function addMoney () {
-    clickerImage.classList.add("clickerImageMove")
-    
+function addMoney() {
+    click.play()
+
     counter = counter + 2 + wireCounter
 
     profits.innerText = "Money: $" + counter
@@ -52,6 +70,7 @@ function buyWires() {
         wires.innerText = "Amount Owned: " + wireCounter
         wirePrice = 150 + wireCounter ** 3
         wireCost.innerText = "Cost: $" + wirePrice.toFixed(0)
+        upgrade.play()
     }
 }
 
@@ -66,6 +85,7 @@ function buyRAM() {
         ram.innerText = "Amount Owned: " + ramCounter
         ramPrice = 700 + ramCounter ** 3
         ramCost.innerText = "Cost: $" + ramPrice.toFixed(0)
+        upgrade.play()
     }
     else {
         let moneyRAMLeft = ramPrice.toFixed(0) - counter
@@ -84,6 +104,7 @@ function buyGPU() {
         gpu.innerText = "Amount Owned: " + gpuCounter
         gpuPrice = 5000 + gpuCounter ** 4
         gpuCost.innerText = "Cost: $" + gpuPrice.toFixed(0)
+        upgrade.play()
     }
     else {
         let moneyGPULeft = gpuPrice.toFixed(0) - counter
@@ -102,6 +123,7 @@ function buyHD() {
         hd.innerText = "Amount Owned: " + hdCounter
         hdPrice = 15000 + hdCounter ** 4
         hdCost.innerText = "Cost: $" + hdPrice.toFixed(0)
+        upgrade.play()
     }
     else {
         let moneyHDLeft = hdPrice.toFixed(0) - counter

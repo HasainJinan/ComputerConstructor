@@ -10,7 +10,7 @@
 </head>
 <body class="bg">
     <div class="container">
-        <div class="Clicker clickerpane"><button class="textStyle clickerButton" onclick="addMoney()"><img src="Images/CPU.png" class="clickerImage clickerImageMove"></button></div>
+        <div class="Clicker clickerpane"><button class="textStyle clickerButton" onclick="addMoney()"><img src="Images/CPU.png" class="clickerImage"></button></div>
         <div class="Computer-Constructor title">Computer Constructor</div>
         <div class="Navigation nav">Upgrades</div>
         <div class="Tabs back"><div class="tabContainer">
@@ -31,8 +31,10 @@
                 <button class="textStyle upgradeButton" id="hdButton" onclick="buyHD()">Hard Drive<br><span id="hdCost">Cost: $15000</span><br><div id="hdOwned">Amount Owned:</div></button>
             </div>
         </div></div>
-        <div class="Munee profit back" id="profits"></div>
+        <div class="Munee"><div class="profit back"><div id="profits"></div><br><button class="textStyle muteMusic" onclick="muteMusic()">Mute Music</button><button class="textStyle playMusic" onclick="playMusic()">Play Music</button></div></div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 
     <script src="clicker.js"></script>
 </body>
