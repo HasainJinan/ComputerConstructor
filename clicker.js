@@ -23,6 +23,8 @@ let hd = document.getElementById("hdOwned")
 let hdCost = document.getElementById("hdCost")
 hd.innerText = "Amount Owned: 0"
 
+let progress1000 = 0
+
 let bgMusic = new Howl({
     src: ["bgMusic.mp3"],
     autoplay: true,
@@ -164,6 +166,15 @@ function checkPrice() {
     }
 }
 
+function progress() {
+    if (progress1000 = 0 && counter >= 1000) {
+        alert("You made $1000!");
+        progress1000 = 1
+    }
+}
+
 setInterval(gameLoop, 1000)
 
 setInterval(checkPrice, 10)
+
+setInterval(progress, 10)
