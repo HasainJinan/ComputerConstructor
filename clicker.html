@@ -18,21 +18,27 @@
             <div class="Image2 upgradeSubtab textStyle"><img src="Images/RAM.png" class="upgradeImage"></div>
             <div class="Image3 upgradeSubtab textStyle"><img src="Images/GPU.png" class="upgradeImage"></div>
             <div class="Image4 upgradeSubtab textStyle"><img src="Images/HardDrive.png" class="upgradeImage"></div>
-            <div class="Upgrade1 upgradeSubtab textStyle">
-                <button class="textStyle upgradeButton" id="wireButton" onclick="buyWires()">Wires<br><span id="wireCost">Cost: $150</span><br><div id="wiresOwned">Amount Owned:</div></button>
+            <div class="Upgrade1 upgradeSubtab textStyle textStyle3">
+                <button class="textStyle textStyle3 upgradeButton" id="wireButton" onclick="buyWires()">Wires<br><span id="wireCost">Cost: $150</span><br><div id="wiresOwned">Amount Owned:</div></button>
             </div>
-            <div class="Upgrade2 upgradeSubtab textStyle">
-                <button class="textStyle upgradeButton" id="ramButton" onclick="buyRAM()">RAM<br><span id="ramCost">Cost: $700</span><br><div id="ramOwned">Amount Owned:</div></button>
+            <div class="Upgrade2 upgradeSubtab textStyle textStyle3">
+                <button class="textStyle textStyle3 upgradeButton" id="ramButton" onclick="buyRAM()">RAM<br><span id="ramCost">Cost: $700</span><br><div id="ramOwned">Amount Owned:</div></button>
             </div>
-            <div class="Upgrade3 upgradeSubtab textStyle">
-                <button class="textStyle upgradeButton" id="gpuButton" onclick="buyGPU()">GPU<br><span id="gpuCost">Cost: $5000</span><br><div id="gpuOwned">Amount Owned:</div></button>
+            <div class="Upgrade3 upgradeSubtab textStyle textStyle3">
+                <button class="textStyle textStyle3 upgradeButton" id="gpuButton" onclick="buyGPU()">GPU<br><span id="gpuCost">Cost: $5000</span><br><div id="gpuOwned">Amount Owned:</div></button>
             </div>
-            <div class="Upgrade4 upgradeSubtab textStyle">
-                <button class="textStyle upgradeButton" id="hdButton" onclick="buyHD()">Hard Drive<br><span id="hdCost">Cost: $15000</span><br><div id="hdOwned">Amount Owned:</div></button>
+            <div class="Upgrade4 upgradeSubtab textStyle textStyle3">
+                <button class="textStyle textStyle3 upgradeButton" id="hdButton" onclick="buyHD()">Hard Drive<br><span id="hdCost">Cost: $15000</span><br><div id="hdOwned">Amount Owned:</div></button>
             </div>
         </div></div>
         <div class="Munee"><div class="profit back"><div id="profits"></div><br><button class="textStyle muteMusic" onclick="muteMusic()">Mute Music</button><button class="textStyle playMusic" onclick="playMusic()">Play Music</button></div></div>
     </div>
+
+    <div class="achievementBox" id="1000progress"><button class="closeButton" onclick="closeProgress1()">X</button><div class="textStyle2 achievement"><p class="achievementSubtext">Making Money</p><p class="achievementSubtext2">Have $1,000.</p></div></div>
+
+    <div class="achievementBox" id="10000progress"><button class="closeButton" onclick="closeProgress2()">X</button><div class="textStyle2 achievement"><p class="achievementSubtext">Breaking The Bank</p><p class="achievementSubtext2">Have $10,000.</p></div></div>
+
+    <div class="achievementBox" id="50000progress"><button class="closeButton" onclick="closeProgress3()">X</button><div class="textStyle2 achievement"><p class="achievementSubtext">Entrepreneur</p><p class="achievementSubtext2">Have $50,000.</p></div></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 

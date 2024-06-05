@@ -24,6 +24,8 @@ let hdCost = document.getElementById("hdCost")
 hd.innerText = "Amount Owned: 0"
 
 let progress1000 = 0
+let progress10000 = 0
+let progress50000 = 0
 
 let bgMusic = new Howl({
     src: ["bgMusic.mp3"],
@@ -39,8 +41,17 @@ let click = new Howl({
 
 let upgrade = new Howl({
     src: ["upgrade.wav"],
-    volume: 0.05
+    volume: 0.02
 })
+
+let achievement = new Howl({
+    src:["achievement.wav"],
+    volume: 0.02
+})
+
+let progressBox1000 = document.getElementById("1000progress")
+let progressBox10000 = document.getElementById("10000progress")
+let progressBox50000 = document.getElementById("50000progress")
 //Variables//
 
 
@@ -135,7 +146,7 @@ function buyHD() {
 
 function gameLoop() {
     //Wire Counter is used to increase click power.//
-    counter = counter + (20 * ramCounter) + (10 * gpuCounter) + (600 * hdCounter)
+    counter = counter + (5 * ramCounter) + (20 * gpuCounter) + (100 * hdCounter)
     profits.innerText = "Money: $" + counter
 }
 
@@ -167,10 +178,32 @@ function checkPrice() {
 }
 
 function progress() {
-    if (progress1000 = 0 && counter >= 1000) {
-        alert("You made $1000!");
-        progress1000 = 1
+    if (progress1000 == 0 && counter >= 1000) {
+        progressBox1000.style.display = "block";
+        achievement.play()
+        progress1000 = 1;
     }
+    if (progress10000 == 0 && counter >= 10000) {
+        progressBox10000.style.display = "block";
+        achievement.play()
+        progress10000 = 1;
+    }
+    if (progress50000 == 0 && counter >= 50000) {
+        progressBox50000.style.display = "block";
+        achievement.play()
+        progress50000 = 1;
+    }
+}
+function closeProgress1() {
+    progressBox1000.style.display = "none";
+}
+
+function closeProgress2() {
+    progressBox10000.style.display = "none";
+}
+
+function closeProgress3() {
+    progressBox50000.style.display = "none";
 }
 
 setInterval(gameLoop, 1000)

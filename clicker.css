@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/tf2-build');
+@import url('https://fonts.cdnfonts.com/css/tf2-secondary');
 
 
 .bg {
@@ -98,7 +99,7 @@
     font-family: tf2 build;
     color: lightblue;
     padding-top: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 15px;
   }
 
   .upgradeSubtab {
@@ -109,6 +110,15 @@
   .textStyle {
     font-family: tf2 build;
     color: lightblue;
+  }
+
+  .textStyle2 {
+    font-family: tf2 build;
+    color: lightgreen;
+  }
+
+  .textStyle3 {
+    font-family: tf2 secondary !important;
   }
   
   .clickerButton {
@@ -126,8 +136,9 @@
   }
   
   .upgradeButton {
-    padding-top: 4vh;
-    padding-bottom: 4vh;
+    font-size: 20px;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
     padding-left: 15vw;
     padding-right: 15vw;
     background-color: white;
@@ -138,7 +149,7 @@
   }
 
   .upgradeImage {
-    height: 103px;
+    height: 107px;
     margin-left: 220px;
   }
 
@@ -179,4 +190,42 @@
 
 #profits {
   margin-left: 20px;
+}
+
+.achievementBox {
+  position: fixed;
+  bottom: 10px;
+  left: 38vw;
+  display: none;
+}
+
+.closeButton {
+  background-color: rgb(8, 77, 42);
+  border: solid lightgreen;
+  border-radius: 3px;
+  color: lightgreen;
+  cursor: pointer;
+  position: absolute;
+  top: 5px; right: 5px;
+}
+
+.achievement {
+  background-color: rgb(8, 77, 42);
+  border: solid lightgreen 2px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}
+
+.achievementSubtext {
+  font-size: 30px;
+  font-family: tf2 secondary !important;
+}
+
+.achievementSubtext2 {
+  font-family: tf2 secondary;
+  font-size: 20px;
 }
