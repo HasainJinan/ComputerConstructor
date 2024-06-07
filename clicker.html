@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="clicker.css">
+
+    <style>
+        #cpsValue {
+            margin-left: 20px;
+            font-size: 20px;
+            font-family: tf2 secondary;
+        }
+    </style>
     
 </head>
 <body class="bg">
@@ -31,7 +39,7 @@
                 <button class="textStyle textStyle3 upgradeButton" id="hdButton" onclick="buyHD()">Hard Drive<br><span id="hdCost">Cost: $15000</span><br><div id="hdOwned">Amount Owned:</div></button>
             </div>
         </div></div>
-        <div class="Munee"><div class="profit back"><div id="profits"></div><br><button class="textStyle muteMusic" onclick="muteMusic()">Mute Music</button><button class="textStyle playMusic" onclick="playMusic()">Play Music</button></div></div>
+        <div class="Munee"><div class="profit back"><div id="profits"></div><div id="cpsValue">$0 per second</div><br><button class="textStyle muteMusic" onclick="muteMusic()">Mute Music</button><button class="textStyle playMusic" onclick="playMusic()">Play Music</button></div></div>
     </div>
 
     <div class="achievementBox" id="1000progress"><button class="closeButton" onclick="closeProgress1()">X</button><div class="textStyle2 achievement"><p class="achievementSubtext">Making Money</p><p class="achievementSubtext2">Have $1,000.</p></div></div>
@@ -43,5 +51,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 
     <script src="clicker.js"></script>
+
+    <script>
+        let cpsValue = document.getElementById("cpsValue")
+
+        function cps() {
+            cpsValue.innerText = "$" + (5 * ramCounter + 20 * gpuCounter + 100 * hdCounter) + " per second"
+        }
+
+        setInterval(cps, 10)
+    </script>
 </body>
 </html>
