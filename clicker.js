@@ -23,6 +23,8 @@ let hd = document.getElementById("hdOwned")
 let hdCost = document.getElementById("hdCost")
 hd.innerText = "Amount Owned: 0"
 
+let bonus = 0
+
 let progress1000 = 0
 let progress10000 = 0
 let progress50000 = 0
@@ -52,6 +54,14 @@ let achievement = new Howl({
 let progressBox1000 = document.getElementById("1000progress")
 let progressBox10000 = document.getElementById("10000progress")
 let progressBox50000 = document.getElementById("50000progress")
+
+let randomEvent = document.getElementById("randomEvent")
+let numX = Math.floor(Math.random() * 101)
+let numY = Math.floor(Math.random() * 101)
+
+let opacity = 0; 
+let opacity2 = 0;
+let opacity3 = 0;
 //Variables//
 
 
@@ -179,19 +189,25 @@ function checkPrice() {
 
 function progress() {
     if (progress1000 == 0 && counter >= 1000) {
+        progressBox1000.style.opacity = opacity
         progressBox1000.style.display = "block";
         achievement.play()
         progress1000 = 1;
+        animation();
     }
     if (progress10000 == 0 && counter >= 10000) {
+        progressBox10000.style.opacity = opacity2
         progressBox10000.style.display = "block";
         achievement.play()
         progress10000 = 1;
+        animation2();
     }
     if (progress50000 == 0 && counter >= 50000) {
+        progressBox50000.style.opacity = opacity3
         progressBox50000.style.display = "block";
         achievement.play()
         progress50000 = 1;
+        animation3();
     }
 }
 function closeProgress1() {
@@ -206,8 +222,53 @@ function closeProgress3() {
     progressBox50000.style.display = "none";
 }
 
+function hideEvent() {
+    randomEvent.style.display = "none";
+}
+
+function changePos() {
+    numX = Math.floor(Math.random() * 101)
+    numY = Math.floor(Math.random() * 101)
+    randomEvent.style.top = numX + "vh";
+    randomEvent.style.left = numY + "vw";
+    randomEvent.style.display = "block";
+    setTimeout(hideEvent, 10000)
+}
+
+function animation() {
+    if (opacity < 1) {
+        opacity = opacity + 0.1
+        progressBox1000.style.opacity = opacity
+        setTimeout(animation, 50)
+    }
+}
+
+function animation2() {
+    if (opacity2 < 1) {
+        opacity2 = opacity2 + 0.1
+        progressBox10000.style.opacity = opacity2
+        setTimeout(animation2, 50)
+    }
+}
+
+function animation3() {
+    if (opacity3 < 1) {
+        opacity3 = opacity3 + 0.1
+        progressBox50000.style.opacity = opacity3
+        setTimeout(animation3, 50)
+    }
+}
+
+function bonusMoney() {
+    bonus = bonus + 1
+    counter = counter + (bonus * 200)
+    profits.innerText = "Money: $" + counter
+}
+
 setInterval(gameLoop, 1000)
 
 setInterval(checkPrice, 10)
 
 setInterval(progress, 10)
+
+setInterval(changePos, 100000 + Math.floor(Math.random() * 20001))

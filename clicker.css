@@ -212,6 +212,7 @@
 .achievement {
   background-color: rgb(8, 77, 42);
   border: solid lightgreen 2px;
+  border-radius: 10px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -228,4 +229,15 @@
 .achievementSubtext2 {
   font-family: tf2 secondary;
   font-size: 20px;
+}
+
+.randomEventBox {
+  position: fixed;
+  top: 0; left: 0;
+  color: lightgreen;
+  background-color: rgb(8, 77, 42);
+  border: solid lightgreen 2px;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 20px;
 }

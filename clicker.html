@@ -16,7 +16,7 @@
     </style>
     
 </head>
-<body class="bg">
+<body class="bg" onload="hideEvent()">
     <div class="container">
         <div class="Clicker clickerpane"><button class="textStyle clickerButton" onclick="addMoney()"><img src="Images/CPU.png" class="clickerImage"></button></div>
         <div class="Computer-Constructor title">Computer Constructor</div>
@@ -43,10 +43,10 @@
     </div>
 
     <div class="achievementBox" id="1000progress"><button class="closeButton" onclick="closeProgress1()">X</button><div class="textStyle2 achievement"><p class="achievementSubtext">Making Money</p><p class="achievementSubtext2">Have $1,000.</p></div></div>
-
     <div class="achievementBox" id="10000progress"><button class="closeButton" onclick="closeProgress2()">X</button><div class="textStyle2 achievement"><p class="achievementSubtext">Breaking The Bank</p><p class="achievementSubtext2">Have $10,000.</p></div></div>
-
     <div class="achievementBox" id="50000progress"><button class="closeButton" onclick="closeProgress3()">X</button><div class="textStyle2 achievement"><p class="achievementSubtext">Entrepreneur</p><p class="achievementSubtext2">Have $50,000.</p></div></div>
+
+    <button class="randomEventBox" id="randomEvent" onclick="hideEvent(); bonusMoney()">CLICK ME</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 
