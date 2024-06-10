@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="clicker.css">    
 </head>
-<body class="bg" onload="hideEvent()">
+<body class="bg" onload="hideEvent(); debuff_()">
     <div class="container">
         <div class="Clicker clickerpane"><button class="textStyle clickerButton" onclick="addMoney()"><img src="Images/CPU.png" class="clickerImage"></button></div>
         <div class="Computer-Constructor title">Computer Constructor</div>
@@ -38,6 +38,10 @@
     <div class="achievementBox" id="50000progress"><button class="closeButton" onclick="closeProgress3()">X</button><div class="textStyle2 achievement"><p class="achievementSubtext">Entrepreneur</p><p class="achievementSubtext2">Have $50,000.</p></div></div>
 
     <button class="randomEventBox" id="randomEvent" onclick="hideEvent(); bonusMoney()">CLICK ME</button>
+
+    <button class="randomEventBox" id="randomEventBad" onclick="hideEvent()">DON'T CLICK ME</button>
+
+    <div id="debuffText">Debuff: CPS set to 0 and Clicks set to 1 for 20 seconds!</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 

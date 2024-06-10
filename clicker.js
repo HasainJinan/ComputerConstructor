@@ -26,6 +26,7 @@ hd.innerText = "Amount Owned: 0"
 let cpsValue = document.getElementById("cpsValue")
 
 let bonus = 0
+let bonusState = 0
 
 let progress1000 = 0
 let progress10000 = 0
@@ -58,12 +59,17 @@ let progressBox10000 = document.getElementById("10000progress")
 let progressBox50000 = document.getElementById("50000progress")
 
 let randomEvent = document.getElementById("randomEvent")
+let randomEventBad = document.getElementById("randomEventBad")
 let numX = Math.floor(Math.random() * 101)
 let numY = Math.floor(Math.random() * 101)
+
+let debuff = 0
+let debuffText = document.getElementById("debuffText")
 
 let opacity = 0; 
 let opacity2 = 0;
 let opacity3 = 0;
+let opacity4 = 0;
 //Variables//
 
 
@@ -226,15 +232,32 @@ function closeProgress3() {
 
 function hideEvent() {
     randomEvent.style.display = "none";
+    randomEventBad.style.display = "none";
 }
 
 function changePos() {
     numX = Math.floor(Math.random() * 101)
     numY = Math.floor(Math.random() * 101)
-    randomEvent.style.top = numX + "vh";
-    randomEvent.style.left = numY + "vw";
-    randomEvent.style.display = "block";
+    bonusState = Math.random()
+    if (bonusState >= 0.2) {
+        randomEvent.style.top = numX + "vh";
+        randomEvent.style.left = numY + "vw";
+        randomEvent.style.display = "block";
+    }
+    else {
+        randomEventBad.style.top = numX + "vh";
+        randomEventBad.style.left = numY + "vw";
+        randomEventBad.style.display = "block";
+    }
     setTimeout(hideEvent, 10000)
+}
+
+function debuff_() {
+    debuffText.style.left = 28 + "vw";
+    debuffText.style.opacity = opacity4
+    debuffText.style.display = "block";
+    animation4();
+
 }
 
 function animation() {
@@ -242,6 +265,12 @@ function animation() {
         opacity = opacity + 0.1
         progressBox1000.style.opacity = opacity
         setTimeout(animation, 50)
+    }
+}
+
+function animation5() {
+    if (opacity4 > 0) {
+        opacity4 = opac
     }
 }
 
@@ -258,6 +287,14 @@ function animation3() {
         opacity3 = opacity3 + 0.1
         progressBox50000.style.opacity = opacity3
         setTimeout(animation3, 50)
+    }
+}
+
+function animation4 () {
+    if (opacity4 < 1) {
+        opacity4 = opacity4 + 0.1
+        debuffText.style.opacity = opacity4
+        setTimeout(animation4, 50)
     }
 }
 

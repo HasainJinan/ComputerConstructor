@@ -238,12 +238,25 @@
   background-color: rgb(8, 77, 42);
   border: solid lightgreen 2px;
   border-radius: 10px;
+  font-size: 30px;
   cursor: pointer;
-  padding: 20px;
+  padding: 10px;
 }
 
 #cpsValue {
   margin-left: 20px;
   font-size: 20px;
   font-family: tf2 secondary;
+}
+
+#debuffText {
+  position: fixed;
+  bottom: 0px; left: 0;
+  color: lightgreen;
+  background-color: rgb(8, 77, 42);
+  border: solid lightgreen 2px;
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 20px;
+  display: none;
 }
