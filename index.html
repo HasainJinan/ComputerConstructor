@@ -5,16 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="clicker.css">
-
-    <style>
-        #cpsValue {
-            margin-left: 20px;
-            font-size: 20px;
-            font-family: tf2 secondary;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="clicker.css">    
 </head>
 <body class="bg" onload="hideEvent()">
     <div class="container">
@@ -52,14 +43,5 @@
 
     <script src="clicker.js"></script>
 
-    <script>
-        let cpsValue = document.getElementById("cpsValue")
-
-        function cps() {
-            cpsValue.innerText = "$" + (5 * ramCounter + 20 * gpuCounter + 100 * hdCounter) + " per second"
-        }
-
-        setInterval(cps, 10)
-    </script>
 </body>
 </html>

@@ -23,6 +23,8 @@ let hd = document.getElementById("hdOwned")
 let hdCost = document.getElementById("hdCost")
 hd.innerText = "Amount Owned: 0"
 
+let cpsValue = document.getElementById("cpsValue")
+
 let bonus = 0
 
 let progress1000 = 0
@@ -77,7 +79,7 @@ function playMusic () {
 function addMoney() {
     click.play()
 
-    counter = counter + 2 + wireCounter
+    counter = counter + 200 + wireCounter
 
     profits.innerText = "Money: $" + counter
 }
@@ -264,6 +266,14 @@ function bonusMoney() {
     counter = counter + (bonus * 200)
     profits.innerText = "Money: $" + counter
 }
+
+
+
+function cps() {
+    cpsValue.innerText = "$" + (5 * ramCounter + 20 * gpuCounter + 100 * hdCounter) + " per second"
+}
+
+setInterval(cps, 10)
 
 setInterval(gameLoop, 1000)
 

@@ -241,3 +241,9 @@
   cursor: pointer;
   padding: 20px;
 }
+
+#cpsValue {
+  margin-left: 20px;
+  font-size: 20px;
+  font-family: tf2 secondary;
+}
