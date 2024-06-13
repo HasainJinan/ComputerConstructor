@@ -36,14 +36,15 @@
 
   .tabContainer {  display: grid;
     grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
       "Image1 Upgrade1"
       "Image2 Upgrade2"
       "Image3 Upgrade3"
-      "Image4 Upgrade4";
+      "Image4 Upgrade4"
+      "Image5 Upgrade5";
       height: 55vh;
   }
   
@@ -51,17 +52,21 @@
   
   .Image2 { grid-area: Image2; }
   
-  .Image3 { grid-area: Image3; }
+  .Image3 { grid-area: Image4; }
 
-  .Image4 { grid-area: Image4; }
+  .Image4 { grid-area: Image5; }
+
+  .Image5 { grid-area: Image3; }
   
   .Upgrade1 { grid-area: Upgrade1; }
   
   .Upgrade2 { grid-area: Upgrade2; }
   
-  .Upgrade3 { grid-area: Upgrade3; }
+  .Upgrade3 { grid-area: Upgrade4; }
 
-  .Upgrade4 { grid-area: Upgrade4; }
+  .Upgrade4 { grid-area: Upgrade5; }
+
+  .Upgrade5 { grid-area: Upgrade3; }
   
 
   .title {
@@ -259,4 +264,26 @@
   font-size: 30px;
   padding: 20px;
   display: none;
+}
+
+.boostBox {
+  position: absolute; 
+  top:660px; 
+  right: 40px; 
+  background-color: rgb(8, 77, 42);
+  border: solid lightgreen;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.boostBar {
+  background-color: lightgreen;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.boostContainer {
+  border: solid white;
+  border-radius: 10px;
+  width: 100px;
 }

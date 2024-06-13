@@ -13,6 +13,9 @@ let ram = document.getElementById("ramOwned")
 let ramCost = document.getElementById("ramCost")
 ram.innerText = "Amount Owned: 0"
 
+let fanCounter = 0
+let fanCost = 2500
+
 let gpuCounter = 0
 let gpu = document.getElementById("gpuOwned")
 let gpuCost = document.getElementById("gpuCost")
@@ -70,6 +73,9 @@ let opacity = 0;
 let opacity2 = 0;
 let opacity3 = 0;
 let opacity4 = 0;
+
+let hide = document.getElementById("hide")
+let hide2 = document.getElementById("hide2")
 //Variables//
 
 
@@ -90,7 +96,7 @@ function addMoney() {
         profits.innerText = "Money: $" + counter
     }
     else {
-        counter = counter + 2 + wireCounter
+        counter = counter + 200 + wireCounter
         profits.innerText = "Money: $" + counter
     }
 }
@@ -126,6 +132,15 @@ function buyRAM() {
     else {
         let moneyRAMLeft = ramPrice.toFixed(0) - counter
         alert("Not enough money. You need $" + moneyRAMLeft + " more to buy this item.")
+    }
+}
+
+function buyFans() {
+    if (counter >= fanCost) {
+        counter = counter - fanCost
+        profits.innerText = "Money: $" + counter
+        fanCounter = fanCounter + 1
+        upgrade.play()
     }
 }
 
@@ -199,6 +214,16 @@ function checkPrice() {
     }
     else {
         hdButton.disabled = true
+    }
+    if (counter.toFixed(0) >= fanCost && fanCounter == 0) {
+        fanButton.disabled = false
+    }
+    else if (counter.toFixed(0) < fanCost && fanCounter == 0) {
+        fanButton.disabled = true
+    }
+    else {
+        hide.style.display = "none";
+        hide2.style.display = "none";
     }
 }
 
@@ -326,6 +351,10 @@ function cps() {
     else {
         cpsValue.innerText = "$0 per second"
     }
+}
+
+function enable() {
+    
 }
 
 setInterval(cps, 10)

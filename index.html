@@ -15,6 +15,7 @@
         <div class="Tabs back"><div class="tabContainer">
             <div class="Image1 upgradeSubtab textStyle"><img src="Images/Wires.png" class="upgradeImage"></div>
             <div class="Image2 upgradeSubtab textStyle"><img src="Images/RAM.png" class="upgradeImage"></div>
+            <div class="Image5 upgradeSubtab textStyle" id="hide2"><img src="Images/AdvancedFans.png" class="upgradeImage"></div>
             <div class="Image3 upgradeSubtab textStyle"><img src="Images/GPU.png" class="upgradeImage"></div>
             <div class="Image4 upgradeSubtab textStyle"><img src="Images/HardDrive.png" class="upgradeImage"></div>
             <div class="Upgrade1 upgradeSubtab textStyle textStyle3">
@@ -23,6 +24,9 @@
             <div class="Upgrade2 upgradeSubtab textStyle textStyle3">
                 <button class="textStyle textStyle3 upgradeButton" id="ramButton" onclick="buyRAM()">RAM<br><span id="ramCost">Cost: $700</span><br><div id="ramOwned">Amount Owned:</div></button>
             </div>
+            <div class="Upgrade5 upgradeSubtab textStyle textStyle3" id="hide">
+                <button class="textStyle textStyle3 upgradeButton" id="fanButton" onclick="buyFans()">Advanced Fans<br>Very Special Items<br>Cost: $2500</button>
+            </div>
             <div class="Upgrade3 upgradeSubtab textStyle textStyle3">
                 <button class="textStyle textStyle3 upgradeButton" id="gpuButton" onclick="buyGPU()">GPU<br><span id="gpuCost">Cost: $5000</span><br><div id="gpuOwned">Amount Owned:</div></button>
             </div>
@@ -30,7 +34,7 @@
                 <button class="textStyle textStyle3 upgradeButton" id="hdButton" onclick="buyHD()">Hard Drive<br><span id="hdCost">Cost: $15000</span><br><div id="hdOwned">Amount Owned:</div></button>
             </div>
         </div></div>
-        <div class="Munee"><div class="profit back"><div id="profits"></div><div id="cpsValue">$0 per second</div><br><button class="textStyle muteMusic" onclick="muteMusic()">Mute Music</button><button class="textStyle playMusic" onclick="playMusic()">Play Music</button></div></div>
+        <div class="Munee"><div class="profit back"><div id="profits"></div><div id="cpsValue">$0 per second</div><br><button class="textStyle muteMusic" onclick="muteMusic()">Mute Music</button><button class="textStyle playMusic" onclick="playMusic()">Play Music</button></div><div class="boostBox"><div class="boostContainer"><div class="boostBar">a</div></div><button style="margin-left: 10px;">Boost</button></div></div>
     </div>
 
     <div class="achievementBox" id="1000progress"><button class="closeButton" onclick="closeProgress1()">X</button><div class="textStyle2 achievement"><p class="achievementSubtext">Making Money</p><p class="achievementSubtext2">Have $1,000.</p></div></div>
