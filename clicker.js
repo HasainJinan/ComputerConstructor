@@ -85,9 +85,14 @@ function playMusic () {
 function addMoney() {
     click.play()
 
-    counter = counter + 200 + wireCounter
-
-    profits.innerText = "Money: $" + counter
+    if (debuff == 1) {
+        counter = counter + 1
+        profits.innerText = "Money: $" + counter
+    }
+    else {
+        counter = counter + 2 + wireCounter
+        profits.innerText = "Money: $" + counter
+    }
 }
 
 //Buying Wires.//
@@ -164,8 +169,10 @@ function buyHD() {
 
 function gameLoop() {
     //Wire Counter is used to increase click power.//
-    counter = counter + (5 * ramCounter) + (20 * gpuCounter) + (100 * hdCounter)
-    profits.innerText = "Money: $" + counter
+    if (debuff == 0) {
+        counter = counter + (5 * ramCounter) + (20 * gpuCounter) + (100 * hdCounter)
+        profits.innerText = "Money: $" + counter
+    }
 }
 
 function checkPrice() {
@@ -239,7 +246,7 @@ function changePos() {
     numX = Math.floor(Math.random() * 101)
     numY = Math.floor(Math.random() * 101)
     bonusState = Math.random()
-    if (bonusState >= 0.2) {
+    if (bonusState >= 0.5) {
         randomEvent.style.top = numX + "vh";
         randomEvent.style.left = numY + "vw";
         randomEvent.style.display = "block";
@@ -257,7 +264,13 @@ function debuff_() {
     debuffText.style.opacity = opacity4
     debuffText.style.display = "block";
     animation4();
+    setTimeout(animation5, 6000)
+    debuff = 1
+    setTimeout(endDebuff, 20000)
+}
 
+function endDebuff() {
+    debuff = 0
 }
 
 function animation() {
@@ -265,12 +278,6 @@ function animation() {
         opacity = opacity + 0.1
         progressBox1000.style.opacity = opacity
         setTimeout(animation, 50)
-    }
-}
-
-function animation5() {
-    if (opacity4 > 0) {
-        opacity4 = opac
     }
 }
 
@@ -298,16 +305,27 @@ function animation4 () {
     }
 }
 
+function animation5() {
+    if (opacity4 > 0) {
+        opacity4 = opacity4 - 0.1
+        debuffText.style.opacity = opacity4
+        setTimeout(animation5, 50)
+    }
+}
+
 function bonusMoney() {
     bonus = bonus + 1
     counter = counter + (bonus * 200)
     profits.innerText = "Money: $" + counter
 }
 
-
-
 function cps() {
-    cpsValue.innerText = "$" + (5 * ramCounter + 20 * gpuCounter + 100 * hdCounter) + " per second"
+    if (debuff == 0) {
+        cpsValue.innerText = "$" + (5 * ramCounter + 20 * gpuCounter + 100 * hdCounter) + " per second"
+    }
+    else {
+        cpsValue.innerText = "$0 per second"
+    }
 }
 
 setInterval(cps, 10)
