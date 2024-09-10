@@ -76,6 +76,10 @@ let opacity4 = 0;
 
 let hide = document.getElementById("hide")
 let hide2 = document.getElementById("hide2")
+
+let boost = 0
+let boostBar = document.getElementById("boostBar")
+let regen = 0
 //Variables//
 
 
@@ -96,7 +100,7 @@ function addMoney() {
         profits.innerText = "Money: $" + counter
     }
     else {
-        counter = counter + 200 + wireCounter
+        counter = counter + 2 + wireCounter
         profits.innerText = "Money: $" + counter
     }
 }
@@ -353,8 +357,41 @@ function cps() {
     }
 }
 
-function enable() {
-    
+function regen() {
+    if (regen == 1) {
+        var width2 = 0
+        var id2 = setInterval(frame2, 200);
+        function frame2() {
+            if (width2 >= 100) {
+            clearInterval(id2);
+            regen = 0
+            }
+            else {
+            width2++;
+            boostBar.style.width = width2 + "%"
+            }
+        }
+    }
+}
+
+function move() {
+    if (boost == 0) {
+        boost = 1;
+        regen = 0;
+        var width = 100;
+        var id = setInterval(frame, 100);
+        function frame() {
+            if (width <= 0) {
+            clearInterval(id);
+            boost = 0;
+            regen = 1;
+            } 
+            else {
+            width--;
+            boostBar.style.width = width + "%";
+            }
+        }
+    }
 }
 
 setInterval(cps, 10)
@@ -366,3 +403,7 @@ setInterval(checkPrice, 10)
 setInterval(progress, 10)
 
 setInterval(changePos, 100000 + Math.floor(Math.random() * 20001))
+
+setInterval(enable, 500)
+
+setInterval(regen, 500)
